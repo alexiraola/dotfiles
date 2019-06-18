@@ -99,3 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+zstyle ':completion:*:ssh:*' hosts off
+zstyle -e ':completion:*:*:ssh:*:my-accounts' users-hosts \
+	'[[ -f ~/.ssh/config && $key = hosts ]] && key=my_hosts reply=()'
+
+eval "$(rbenv init -)"
