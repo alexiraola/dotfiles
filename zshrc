@@ -104,3 +104,5 @@ zstyle -e ':completion:*:*:ssh:*:my-accounts' users-hosts \
 	'[[ -f ~/.ssh/config && $key = hosts ]] && key=my_hosts reply=()'
 
 eval "$(rbenv init -)"
+setopt auto_cd
+cdpath=(~/Proyects)
