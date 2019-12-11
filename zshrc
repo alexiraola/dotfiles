@@ -104,5 +104,10 @@ zstyle -e ':completion:*:*:ssh:*:my-accounts' users-hosts \
 	'[[ -f ~/.ssh/config && $key = hosts ]] && key=my_hosts reply=()'
 
 eval "$(rbenv init -)"
+
 setopt auto_cd
 cdpath=(~/Proyects)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
