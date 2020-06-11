@@ -39,8 +39,14 @@ imap kj <Esc>
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
+Plug 'leafgarland/typescript-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 autocmd vimenter * colorscheme gruvbox
 set background=dark
+
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
