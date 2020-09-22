@@ -37,6 +37,18 @@ nnoremap <C-l> <C-w>l
 imap jk <Esc>
 imap kj <Esc>
 
+set runtimepath+=~/.vim/
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent call system('mkdir -p ~/.vim/{autoload,bundle,cache,undo,backups,swaps}')
+  silent call system('curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+  execute 'source  ~/.vim/autoload/plug.vim'
+  augroup plugsetup
+    au!
+    autocmd VimEnter * PlugInstall
+  augroup end
+endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -54,4 +66,4 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " let g:ctrlp_map = 'ff'
 nnoremap ff :CtrlP<cr>
 
-source .vim/coc.vim
+source ~/.vim/coc.vim
