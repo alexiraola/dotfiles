@@ -104,6 +104,8 @@ alias dps='docker ps --format "table
 
 alias vimrc="vim ~/.vimrc"
 
+alias vim=nvim
+
 zstyle ':completion:*:ssh:*' hosts off
 zstyle -e ':completion:*:*:ssh:*:my-accounts' users-hosts \
 	'[[ -f ~/.ssh/config && $key = hosts ]] && key=my_hosts reply=()'
@@ -125,3 +127,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/Users/$USER/flutter/bin
 export PATH="/usr/local/sbin:$PATH"
+
+export GPG_TTY=$(tty)

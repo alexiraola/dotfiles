@@ -64,20 +64,47 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-fugitive'
+Plug 'arcticicestudio/nord-vim'
+
+" LSP configuration helpers
+Plug 'neovim/nvim-lspconfig'
+
+" Improved syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Improved LSP interface
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
+" Autocomplete menus
+Plug 'hrsh7th/nvim-compe'
+
+" Formatter integration
+Plug 'mhartington/formatter.nvim'
+
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'keith/swift.vim'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
-autocmd vimenter * colorscheme gruvbox
+colorscheme nord
 set background=dark
 
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 " let g:ctrlp_map = 'ff'
-nnoremap ff :CtrlP<cr>
+" nnoremap ff :CtrlP<cr>
+nnoremap ff :Telescope find_files<cr>
 
-source ~/.vim/coc.vim
+" source ~/.vim/coc.vim
+
+:lua require('setup')
