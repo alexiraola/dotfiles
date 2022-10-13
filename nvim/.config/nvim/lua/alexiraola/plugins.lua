@@ -35,7 +35,12 @@ packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  use 'arcticicestudio/nord-vim'
+  use {
+    'arcticicestudio/nord-vim',
+	config = function()
+	  vim.cmd[[colorscheme nord]]
+	end
+  }
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -45,5 +50,12 @@ packer.startup(function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' }
+  }
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+	  require('Comment').setup()
+    end
   }
 end)
