@@ -1,12 +1,24 @@
-local status, packer = pcall(require, "packer")
-if (not status) then
-  print("Packer is not installed")
-  return
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
-vim.cmd [[packadd packer.nvim]]
+local packer_bootstrap = ensure_packer()
 
-packer.startup(function(use)
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'tpope/vim-surround'
@@ -35,12 +47,7 @@ packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  use {
-    'arcticicestudio/nord-vim',
-	config = function()
-	  vim.cmd[[colorscheme nord]]
-	end
-  }
+  use 'arcticicestudio/nord-vim'
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -52,10 +59,10 @@ packer.startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons' }
   }
 
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-	  require('Comment').setup()
-    end
-  }
+  use 'numToStr/Comment.nvim'
+
+  if packer_bootstrap then
+    require('packer').sync()
+	print('Intalling plugins, restart nvim when finished')
+  end
 end)

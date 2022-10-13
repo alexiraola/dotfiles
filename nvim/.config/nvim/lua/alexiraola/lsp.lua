@@ -1,3 +1,9 @@
+local present, lspconfig = pcall(require, 'lspconfig')
+
+if not present then
+  return
+end
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -37,15 +43,24 @@ end
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local present, cmp = pcall(require, 'cmp')
+
+if not present then
+  return
+end
+
 -- luasnip setup
-local luasnip = require 'luasnip'
+local present, luasnip = pcall(require, 'luasnip')
+
+if not present then
+  return
+end
 
 cmp.setup({
     snippet = {
         expand = function(args)
         vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        luasnip.lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
@@ -115,7 +130,7 @@ sources = cmp.config.sources({
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require('lspconfig')['tsserver'].setup{
+lspconfig['tsserver'].setup{
     capabilities = capabilities,
     on_attach = on_attach,
 }
