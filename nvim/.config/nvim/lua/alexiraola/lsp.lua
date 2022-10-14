@@ -56,16 +56,35 @@ if not present then
   return
 end
 
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
+local cmp_window = require('cmp.utils.window')
+
 cmp.setup({
     snippet = {
-        expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        luasnip.lsp_expand(args.body) -- For `luasnip` users.
-        end,
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+      completion = {
+        border = border "CmpBorder",
+        winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+      },
+      documentation = {
+        border = border "CmpDocBorder",
+      },
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -92,6 +111,13 @@ cmp.setup({
             end
           end, { 'i', 's' }),
     }),
+    formatting = {
+      format = function(_, vim_item)
+        local icons = require("alexiraola.icons").lspkind
+        vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+        return vim_item
+      end,
+    },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
