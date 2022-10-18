@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
-  
+
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -60,6 +60,10 @@ return require('packer').startup(function(use)
   }
 
   use 'numToStr/Comment.nvim'
+
+  use 'dinhhuy258/git.nvim'
+  use 'lewis6991/gitsigns.nvim'
+  use 'rafamadriz/friendly-snippets'
 
   if packer_bootstrap then
     require('packer').sync()
