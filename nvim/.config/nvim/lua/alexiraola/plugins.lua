@@ -49,15 +49,10 @@ return require('packer').startup(function(use)
 
   use 'arcticicestudio/nord-vim'
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-lualine/lualine.nvim'
+  use 'kyazdani42/nvim-web-devicons'
 
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
+  use 'nvim-tree/nvim-tree.lua'
 
   use 'numToStr/Comment.nvim'
 
