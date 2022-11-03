@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
   use 'dinhhuy258/git.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'rafamadriz/friendly-snippets'
+  use 'christoomey/vim-tmux-navigator' -- tmux & split window navigation
 
   if packer_bootstrap then
     require('packer').sync()
