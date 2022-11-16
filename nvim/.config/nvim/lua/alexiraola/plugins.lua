@@ -61,6 +61,14 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use 'christoomey/vim-tmux-navigator' -- tmux & split window navigation
   use 'windwp/nvim-autopairs'
+  use 'nikvdp/ejs-syntax'
+  use {
+	  'ray-x/navigator.lua',
+	  requires = {
+		  { 'ray-x/guihua.lua', run = 'cd lua/fzy && make'},
+		  { 'neovim/nvim-lspconfig'},
+	  },
+  }
 
   if packer_bootstrap then
     require('packer').sync()
