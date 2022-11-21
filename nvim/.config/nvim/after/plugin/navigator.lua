@@ -4,4 +4,8 @@ if not navigator_ok then
 	return
 end
 
-navigator.setup()
+navigator.setup({
+	lsp = {
+		format_on_save = false
+	}
+})
