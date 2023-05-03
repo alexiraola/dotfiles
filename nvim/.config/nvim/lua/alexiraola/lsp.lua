@@ -4,6 +4,22 @@ if not present then
 	return
 end
 
+local mason_ok, mason = pcall(require, 'mason')
+local masonlsp_ok, masonlsp = pcall(require, 'mason-lspconfig')
+
+if not mason_ok then
+	return
+end
+
+if not masonlsp_ok then
+	return
+end
+
+mason.setup()
+masonlsp.setup({
+	automatic_installation = true
+})
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }

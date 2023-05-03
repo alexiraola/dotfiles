@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/alex/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bash-history.nvim"] = {
-    loaded = true,
-    path = "/Users/alex/.local/share/nvim/site/pack/packer/start/bash-history.nvim",
-    url = "https://github.com//Users/alex/Projects/bash-history.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/alex/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -143,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/alex/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/alex/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,

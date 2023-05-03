@@ -21,6 +21,7 @@ vim.cmd([[
 return require('packer').startup(function(use)
   use {
     "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
 
