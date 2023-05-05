@@ -1,0 +1,21 @@
+[user]
+	name = Alex Iraola
+	email = alex.iraola@gmail.com
+	signingkey = F63C5A31A8BE7EA7
+[core]
+	excludesfile = /Users/alex/.gitignore_global
+	editor = nvim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = auto
+[filesystem "Oracle Corporation|1.8.0_40|/dev/disk1s1"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[commit]
+	template = /Users/alex/.stCommitMsg
+	gpgsign = true
