@@ -17,3 +17,5 @@ fish_add_path $HOME/.config/bin
 fish_add_path /usr/local/sbin
 
 alias vim="nvim"
+
+starship init fish | source
