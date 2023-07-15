@@ -8,6 +8,8 @@ set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
 
 set -Ux EDITOR nvim
+set -Ux XDG_CONFIG_HOME $HOME/.config
+
 
 set -gx CDPATH $CDPATH . ~ ~/Projects
 set -gx GPG_TTY $TTY
