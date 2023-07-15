@@ -4,6 +4,9 @@ end
 
 set -gx CDPATH $CDPATH . ~ ~/Projects
 set -gx GPG_TTY $TTY
-set -gx PATH $PATH . ~ $HOME/go/bin
+
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/.config/bin
+fish_add_path /usr/local/sbin
 
 alias vim="nvim"
