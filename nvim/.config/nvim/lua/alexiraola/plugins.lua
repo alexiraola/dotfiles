@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  use 'arcticicestudio/nord-vim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use 'nvim-lualine/lualine.nvim'
   use 'kyazdani42/nvim-web-devicons'
