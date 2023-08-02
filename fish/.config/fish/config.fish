@@ -19,5 +19,6 @@ fish_add_path $HOME/.config/bin
 fish_add_path /usr/local/sbin
 
 alias vim="nvim"
+alias nvim-lazyvim="NVIM_APPNAME=lazyvim nvim"
 
 starship init fish | source
