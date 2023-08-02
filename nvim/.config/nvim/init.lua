@@ -22,6 +22,8 @@ require("lazy").setup({
 		{ import = "plugins.coding" },
 		{ import = "plugins.editor" },
 		{ import = "plugins.ui" },
+		{ import = "plugins.lang.json" },
+		{ import = "plugins.lang.typescript" },
 	},
 })
 require("lazy.core.util").try(function()
