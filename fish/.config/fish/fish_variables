@@ -48,5 +48,5 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/alex/go/bin\x1e/usr/local/sbin\x1e/Users/alex/\x2econfig/bin
-SETUVAR nvm_default_version:v16
+SETUVAR fish_user_paths:/Users/alex/android\x2dsdk\x2dmacosx/platform\x2dtools\x1e/Users/alex/development/flutter/bin\x1e/Users/alex/development/flutter\x1e/Users/alex/go/bin\x1e/usr/local/sbin\x1e/Users/alex/\x2econfig/bin
+SETUVAR nvm_default_version:v18
