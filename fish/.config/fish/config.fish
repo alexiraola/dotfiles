@@ -21,7 +21,7 @@ fish_add_path /usr/local/sbin
 fish_add_path $HOME/development/flutter/bin
 fish_add_path $HOME/android-sdk-macosx/platform-tools
 
-alias vim="nvim"
+alias vim="NVIM_APPNAME=lazyvim nvim"
 alias nvim-lazyvim="NVIM_APPNAME=lazyvim nvim"
 
 starship init fish | source
