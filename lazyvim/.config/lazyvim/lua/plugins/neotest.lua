@@ -4,6 +4,6 @@ return {
   { "haydenmeade/neotest-jest" },
   {
     "nvim-neotest/neotest",
-    opts = { adapters = { "neotest-plenary", "neotest-jest", "neotest-go" } },
+    opts = { adapters = { "neotest-plenary", "neotest-jest", "neotest-go", "rustaceanvim.neotest" } },
   },
 }
