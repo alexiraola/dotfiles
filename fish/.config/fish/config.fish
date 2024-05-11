@@ -23,5 +23,8 @@ fish_add_path $HOME/android-sdk-macosx/platform-tools
 
 alias vim="NVIM_APPNAME=lazyvim nvim"
 alias nvim-lazyvim="NVIM_APPNAME=lazyvim nvim"
+alias ls="eza --icons=always"
+alias bat="batcat"
 
+zoxide init --cmd cd fish | source
 starship init fish | source
