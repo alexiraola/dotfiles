@@ -6,6 +6,7 @@ config.font_size = 12
 config.color_scheme = "Catppuccin Mocha"
 
 config.enable_tab_bar = false
+config.enable_wayland = false
 
 -- config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.9
