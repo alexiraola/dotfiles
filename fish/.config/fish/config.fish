@@ -15,13 +15,19 @@ set -U nvm_default_version v18
 set -gx CDPATH $CDPATH . ~ ~/Projects
 set -gx GPG_TTY $TTY
 
-fish_add_path $HOME/go/bin
+set -Ux GOPATH $HOME/go
+
+fish_add_path $GOPATH/bin
 fish_add_path $HOME/.config/bin
 fish_add_path /usr/local/sbin
 fish_add_path $HOME/development/flutter/bin
 fish_add_path $HOME/android-sdk-macosx/platform-tools
 fish_add_path $HOME/.deno/bin
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/swift-6.0.2/usr/bin
+fish_add_path $HOME/.config/herd-lite/bin
+#export PHP_INI_SCAN_DIR="/home/alex/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+fish_add_path $HOME/.nimble/bin
 
 alias vim="NVIM_APPNAME=lazyvim nvim"
 alias nvim-lazyvim="NVIM_APPNAME=lazyvim nvim"
