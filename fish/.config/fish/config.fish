@@ -26,13 +26,11 @@ fish_add_path $HOME/.deno/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/swift-6.0.2/usr/bin
 fish_add_path $HOME/.config/herd-lite/bin
-#export PHP_INI_SCAN_DIR="/home/alex/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 fish_add_path $HOME/.nimble/bin
 
 alias vim="NVIM_APPNAME=lazyvim nvim"
 alias nvim-lazyvim="NVIM_APPNAME=lazyvim nvim"
 alias ls="eza --icons=always"
-alias bat="batcat"
 
 zoxide init --cmd cd fish | source
 starship init fish | source
@@ -40,4 +38,4 @@ starship init fish | source
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
-/home/alex/.local/bin/mise activate fish | source
+/usr/bin/mise activate fish | source
