@@ -39,3 +39,6 @@ starship init fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 /usr/bin/mise activate fish | source
+
+# opencode
+fish_add_path /home/alex/.opencode/bin

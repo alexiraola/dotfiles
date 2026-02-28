@@ -1,0 +1,13 @@
+[
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "space space": "file_finder::Toggle",
+      "space /": "pane::DeploySearch",
+    },
+  },
+]
