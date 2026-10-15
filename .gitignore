@@ -1,2 +1,26 @@
 vim/.vim/plugged
 lazygit/.config/lazygit/state.yml
+
+# opencode: generados por la herramienta y el secreto del servicio local.
+# No haría falta con stow (el directorio real queda en ~/.config/opencode/),
+# pero por si alguien cambia a enlazar el directorio completo.
+opencode/.config/opencode/node_modules/
+opencode/.config/opencode/package.json
+opencode/.config/opencode/package-lock.json
+opencode/.config/opencode/bun.lock
+opencode/.config/opencode/bun.lockb
+opencode/.config/opencode/service.json
+opencode/.config/opencode/*.bak
+opencode/.config/opencode/*.bak.*
+
+# Backups de ediciones manuales
+*.bak
+*.bak.*
+
+# fish crea fish_variables<random> cuando no puede escribir el original.
+# El fish_variables de verdad ya está versionado; estas son duplicados de runtime.
+fish/.config/fish/fish_variables*
+
+# Symlinks absolutos a /usr/share/aether/shaders/, propios de esta máquina.
+# Se regeneran instalando aether; hyprland.conf no los referencia.
+hypr/.config/hypr/shaders/

@@ -66,3 +66,10 @@ if test -x /usr/bin/mise
 else if command -q mise
     mise activate fish | source
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/alex/.local/share/pnpm"
+if not string match -q -- "$PNPM_HOME/bin" $PATH
+  set -gx PATH "$PNPM_HOME/bin" $PATH
+end
+# pnpm end
